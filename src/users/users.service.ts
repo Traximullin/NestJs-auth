@@ -31,7 +31,8 @@ export class UsersService {
   }
 
   async getUserByEmail(email: string) { // поиск по почте , возвращает true || false
-    const user = await this.usersModel.findOne({where: {email},include: {new: true}})
+    const user = await this.usersModel.findOne({email: email})
+    console.log(user)
     return user;
   }
 }
